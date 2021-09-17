@@ -1,0 +1,22 @@
+{
+  "name": "udemyjurekrxjs",
+  "version": "1.0.0",
+  "description": "RxJS course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jroux-git/udemyJurekRxJS.git"
+  },
+  "author": "Jean Roux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jroux-git/udemyJurekRxJS/issues"
+  },
+  "homepage": "https://github.com/jroux-git/udemyJurekRxJS#readme",
+  "dependencies": {
+    "rxjs": "^7.3.0"
+  }
+}

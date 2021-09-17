@@ -1,0 +1,17 @@
+{
+  "name": "section3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jean Roux",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "rxjs": "^7.3.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}
