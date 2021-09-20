@@ -4,11 +4,12 @@ const observable$ = new Observable<string>(subscriber => {
   console.log('Observable executed');
   subscriber.next("Alice");
   subscriber.next("Ben");
+  let counter = 0;
 
-  setTimeout(() => {
-    subscriber.next("Charlie");
-    //subscriber.complete();
-  }, 2000);
+  // setTimeout(() => {
+  //   subscriber.next("Charlie");
+  //   //subscriber.complete();
+  // }, 2000);
 
   //subscriber.complete();
   //subscriber.unsubscribe();
@@ -16,9 +17,15 @@ const observable$ = new Observable<string>(subscriber => {
   //   subscriber.error(new Error("Oops!"));
   // }, 4000);
 
+   const invervalId = setInterval(() => {
+    console.log("Emitted", counter);
+     subscriber.next((counter++).toString());
+   }, 2000);
+
   // Teardown logic
   return () => {
     console.log('Teardown');
+    clearInterval(invervalId);
   };
 });
 
@@ -37,10 +44,16 @@ console.log('Before subscribe');
 // });
 
 // 3
-observable$.subscribe({
+const subscription = observable$.subscribe({
   next: value => console.log(value),
   error: err => console.error("Error: ", err.message),
   complete: () => console.log("complete")
 });
 
 console.log('After subscribe');
+
+// Unsubscribe
+setTimeout(() => {
+  console.log("unsubscribing");
+  subscription.unsubscribe();
+}, 7000);
